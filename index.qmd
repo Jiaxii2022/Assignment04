@@ -19,7 +19,28 @@ library(tidyverse)
 You can add options to executable code like this
 
 ```{r}
+data<-read_csv(
+  paste0("ACS_2018_Median_Household_Income_Variables_Tract.csv")
+)
+```
 
+```{r}
+ggplot(data=data)+
+  geom_point(mapping = 
+              aes(x=GEOID,
+                           y=income_with_total_household
+                  ), alpha=0.6,color='blue',shape=22,size=1.5,fill='blue'
+             )+
+  labs(x="GEOID",y="TOTAL HOUSEHOLD")+
+  theme(axis.title.x=element_text(vjust=0,size=15),
+       axis.title.y=element_text(vjust=2,size=15) )+
+  +ggtitle
+  scale_y_continuous(limits= c(500, NA))
+```
+
+```{r}
+ggplot(data, aes(GEOID, )) +
+  geom_line(color = 'blue')
 ```
 
 The `echo: false` option disables the printing of code (only output is displayed).
