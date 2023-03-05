@@ -37,6 +37,16 @@ ggplot(data=data)+
   +ggtitle
   scale_y_continuous(limits= c(500, NA))
 ```
+```{r}
+ggplot(data,mapping=aes(
+  x=GEOID,y=income_with_hispanic_or_latino_householder)
+  )+
+  geom_smooth()+
+  labs(title = 'The relationship between Geographic location and hispanic or latino household median household income',
+       subtitle = 'x-axis represents Geography Identifier, y-axis represents median household income in past 12 months,hispanic or latino householder',
+       caption = 'data from Open Data DC')"
+```
+# This graph shows that the relationship between house location in DC and the total median household income in hispanic or latino family householder. The graph shows that there is a negative relationship between the house location with increase georgraphy identifier (FIP Code) and family household income in this race group. But the georgraphy identifier is between 11001003500 and 11001006000, the median total family household income in this race group has a increasing trend, which means I think 11001006000 is a great area of living, maybe has greater school and safer security environment. 
 
 ```{r}
 ggplot(data, aes(GEOID, )) +
