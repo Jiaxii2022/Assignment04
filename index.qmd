@@ -14,6 +14,7 @@ When you click the **Render** button a document will be generated that includes 
 
 ```{r}
 library(tidyverse)
+
 ```
 
 You can add options to executable code like this
@@ -35,7 +36,9 @@ ggplot(data=data)+
   theme(axis.title.x=element_text(vjust=0,size=15),
        axis.title.y=element_text(vjust=2,size=15) )+
   scale_y_continuous(limits= c(500, NA))
+warnings('off')
 ```
+## This graph shows the relationship between house location in DC and the total household income in all kinds of householder.From the dot plot, we cannot see the specific relationship between georgraphy identifier (FIP Code) and family household income in general.But in the area of GEOID between 11001000000 and 11001003000,The distribution of points is higher. The points in the right area are lower and denser. It means that we may study the relationship between the two through other plots, or stratify the data to control more influencing factors.
 ```{r}
 ggplot(data,mapping=aes(
   x=GEOID,y=income_with_hispanic_or_latino_householder)
@@ -44,6 +47,7 @@ ggplot(data,mapping=aes(
   labs(title = 'The relationship between Geographic location and hispanic or latino household median household income',
        subtitle = 'x-axis represents Geography Identifier, y-axis represents median household income in past 12 months,hispanic or latino householder',
        caption = 'data from Open Data DC')
+warnings('off')
 ```
 # This graph shows that the relationship between house location in DC and the total median household income in hispanic or latino family householder. The graph shows that there is a negative relationship between the house location with increase georgraphy identifier (FIP Code) and family household income in this race group. But the georgraphy identifier is between 11001003500 and 11001006000, the median total family household income in this race group has a increasing trend, which means I think 11001006000 is a great area of living, maybe has greater school and safer security environment. 
 ```{r}
@@ -51,6 +55,7 @@ ggplot(data,mapping=aes(x=GEOID,y=income_with_householder_25_to_44_years,color="
   labs(title = 'The relationship between Geographic location and median of family household income in householders between 25 to 44 years old',
        subtitle = 'x-axis represents Geography Identifier-FIPS Code, y-axis represents median of family household income in householders between 25 to 44 years old',
        caption = 'data from Open Data DC')
+warnings('off')
 ```
 # This red column graph shows that the geographic location with distribution of various family income householders'age between 25 and 44 years old. According to the graph, we can see that in the area of GEOID between 11001000800 and 11001001550 has the highest household income in age between 25 and 45. Also, the area of GEOID with 11001006800 has relative high household income in age between 25 and 45.The traits that people in 25-44 age level are likely working-focused and child-focused, so that we can estimate that the area with GEOID between 11001000800 and 11001001550 and 11001006800 are tends to have more better working places and high-quality school nearby than the rest area in DC. 
 
@@ -62,6 +67,6 @@ ggplot(data,aes(GEOID,income_with_self_employment)) +
        subtitle = 'x-axis represents Geography Identifier, y-axis represents income with self employment',
        caption = 'data from Open Data DC')
 ```
-
+## This graph shows that the relationship between house location in DC and household with self-employment income in past 12 months.From the graph, we can see that in the area that the georgraphy identifier is between 11001000000 and 11001006000, the lowest household income with self-employment is higher than other area's. We can assume that people living in these area are more inclined to start a business on their own. Maybe they have more time and wealth.This assumption is consistent with the graph of total household income in the first graph.
 
 The `echo: false` option disables the printing of code (only output is displayed).
