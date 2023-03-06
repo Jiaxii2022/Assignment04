@@ -185,7 +185,35 @@ dbl (21): OBJECTID, GEOID, ALAND, AWATER, median_income, income_with_househo...
 </div>
 </div>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data,<span class="at">mapping=</span><span class="fu">aes</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x=</span>GEOID,<span class="at">y=</span>income_with_hispanic_or_latino_householder)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()<span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'The relationship between Geographic location and hispanic or latino household median household income'</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">'x-axis represents Geography Identifier, y-axis represents median household income in past 12 months,hispanic or latino householder'</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">'data from Open Data DC'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 79 rows containing non-finite values (`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="this-graph-shows-that-the-relationship-between-house-location-in-dc-and-the-total-median-household-income-in-hispanic-or-latino-family-householder.-the-graph-shows-that-there-is-a-negative-relationship-between-the-house-location-with-increase-georgraphy-identifier-fip-code-and-family-household-income-in-this-race-group.-but-the-georgraphy-identifier-is-between-11001003500-and-11001006000-the-median-total-family-household-income-in-this-race-group-has-a-increasing-trend-which-means-i-think-11001006000-is-a-great-area-of-living-maybe-has-greater-school-and-safer-security-environment." class="level1">
+<h1>This graph shows that the relationship between house location in DC and the total median household income in hispanic or latino family householder. The graph shows that there is a negative relationship between the house location with increase georgraphy identifier (FIP Code) and family household income in this race group. But the georgraphy identifier is between 11001003500 and 11001006000, the median total family household income in this race group has a increasing trend, which means I think 11001006000 is a great area of living, maybe has greater school and safer security environment.</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data,<span class="fu">aes</span>(GEOID,income_with_self_employment)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'The relationship between Geographic location and self employment income'</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">'x-axis represents Geography Identifier, y-axis represents income with self employment'</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">'data from Open Data DC'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 <p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
 </section>

@@ -34,7 +34,6 @@ ggplot(data=data)+
   labs(x="GEOID",y="TOTAL HOUSEHOLD")+
   theme(axis.title.x=element_text(vjust=0,size=15),
        axis.title.y=element_text(vjust=2,size=15) )+
-  +ggtitle
   scale_y_continuous(limits= c(500, NA))
 ```
 ```{r}
@@ -44,13 +43,19 @@ ggplot(data,mapping=aes(
   geom_smooth()+
   labs(title = 'The relationship between Geographic location and hispanic or latino household median household income',
        subtitle = 'x-axis represents Geography Identifier, y-axis represents median household income in past 12 months,hispanic or latino householder',
-       caption = 'data from Open Data DC')"
+       caption = 'data from Open Data DC')
 ```
 # This graph shows that the relationship between house location in DC and the total median household income in hispanic or latino family householder. The graph shows that there is a negative relationship between the house location with increase georgraphy identifier (FIP Code) and family household income in this race group. But the georgraphy identifier is between 11001003500 and 11001006000, the median total family household income in this race group has a increasing trend, which means I think 11001006000 is a great area of living, maybe has greater school and safer security environment. 
 
+
+
 ```{r}
-ggplot(data, aes(GEOID, )) +
-  geom_line(color = 'blue')
+ggplot(data,aes(GEOID,income_with_self_employment)) +
+  geom_line()+
+  labs(title = 'The relationship between Geographic location and self employment income',
+       subtitle = 'x-axis represents Geography Identifier, y-axis represents income with self employment',
+       caption = 'data from Open Data DC')
 ```
+
 
 The `echo: false` option disables the printing of code (only output is displayed).
