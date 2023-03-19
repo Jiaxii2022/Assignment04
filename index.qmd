@@ -1,7 +1,10 @@
 ---
 title: "index"
 author: "Jiaxi and Chenyu"
-format: html
+format:
+  html:
+    self-contained: true
+
 ---
 
 ## Quarto
@@ -32,7 +35,11 @@ ggplot(data=data)+
                            y=income_with_total_household
                   ), alpha=0.6,color='blue',shape=22,size=1.5,fill='blue'
              )+
-  labs(x="GEOID",y="TOTAL HOUSEHOLD")+
+  annotate("text", x=11001000701, y=3388, label="randomly picked household income", size=4, color="red")+
+  labs(title = 'The relationship between Geographic location and hispanic or latino household median household income',
+       subtitle = 'x-axis represents Geography Identifier, y-axis represents median household income in past 12 months,hispanic or latino householder',
+       caption = 'data from Open Data DC',
+       x="GEOID",y="TOTAL HOUSEHOLD")+
   theme(axis.title.x=element_text(vjust=0,size=15),
        axis.title.y=element_text(vjust=2,size=15) )+
   scale_y_continuous(limits= c(500, NA))
